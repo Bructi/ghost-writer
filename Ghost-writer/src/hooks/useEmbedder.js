@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-// Vite handles this import magic for workers
+
 import EmbedderWorker from '../utils/embedder.worker?worker&inline';
 
 export function useEmbedder() {
