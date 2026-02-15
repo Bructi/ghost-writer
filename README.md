@@ -2,7 +2,7 @@
 
 **A privacy-centric Chrome Extension that turns your browser into a semantic knowledge base.**
 
-> **Live Demo:** [Insert Link to YouTube Video Here]  
+<!-- > **Live Demo:** [Insert Link to YouTube Video Here]   -->
 > **Status:** MVP Complete / Production Ready
 
 ---
