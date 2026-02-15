@@ -7,12 +7,12 @@ export default function GhostHud() {
   const [isOpen, setIsOpen] = useState(true);
   const [view, setView] = useState('scanner');
 
-  // AI State
+  
   const { isReady, generateEmbedding } = useEmbedder();
   const [similarNotes, setSimilarNotes] = useState([]);
   const [processingAI, setProcessingAI] = useState(false);
 
-  // Scanner State
+ 
   const [scanData, setScanData] = useState(null);
   const [embedding, setEmbedding] = useState(null); // Store current vector
   const [isScanning, setIsScanning] = useState(false);
@@ -34,7 +34,7 @@ export default function GhostHud() {
 
   const handleScan = async () => {
     setIsScanning(true);
-    setSimilarNotes([]); // Clear previous results
+    setSimilarNotes([]); 
 
    
     setTimeout(async () => {
@@ -114,7 +114,7 @@ export default function GhostHud() {
                 <span style={{ fontSize: '14px' }}>{scanData.title}</span>
               </div>
 
-              {/* AI INSIGHTS AREA */}
+              
               {processingAI && <div style={{ fontSize: '11px', color: '#888', marginBottom: '10px' }}>🧠 Analyzing semantic connections...</div>}
 
               {similarNotes.length > 0 && (
@@ -150,7 +150,7 @@ export default function GhostHud() {
       {view === 'library' && (
         <div className="ghost-library-view">
 
-          {/* EXPORT BUTTON - Only show if we have items */}
+          
           {libraryItems.length > 0 && (
             <button
               onClick={exportBrain}
@@ -175,10 +175,10 @@ export default function GhostHud() {
             <p style={{ color: '#666', textAlign: 'center', fontSize: '12px' }}>Brain is empty.</p>
           ) : (
             <div className="ghost-library-list">
-              {/* ... existing list code ... */}
+              
               {libraryItems.map((item) => (
                 <div key={item.id} className="ghost-card">
-                  {/* ... existing card code ... */}
+                  
                   <h4>{item.title.substring(0, 40)}{item.title.length > 40 ? '...' : ''}</h4>
                   <div className="ghost-card-meta">
                     <span>{item.siteName}</span>
