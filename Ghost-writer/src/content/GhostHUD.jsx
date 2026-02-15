@@ -6,15 +6,13 @@ import { exportBrain } from '../utils/exporter';
 export default function GhostHud() {
   const [isOpen, setIsOpen] = useState(true);
   const [view, setView] = useState('scanner');
-
-  
+
   const { isReady, generateEmbedding } = useEmbedder();
   const [similarNotes, setSimilarNotes] = useState([]);
   const [processingAI, setProcessingAI] = useState(false);
-
- 
+
   const [scanData, setScanData] = useState(null);
-  const [embedding, setEmbedding] = useState(null); // Store current vector
+  const [embedding, setEmbedding] = useState(null); 
   const [isScanning, setIsScanning] = useState(false);
   const [savedCount, setSavedCount] = useState(0);
   const [isSaved, setIsSaved] = useState(false);
