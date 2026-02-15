@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { extractPageContent } from '../utils/scraper';
 import { saveSnippet, getSnippetCount, getRecentSnippets, deleteSnippet, findSimilarSnippets } from '../utils/db';
-import { useEmbedder } from '../hooks/useEmbedder'; // <--- New Hook
+import { useEmbedder } from '../hooks/useEmbedder'; 
 import { exportBrain } from '../utils/exporter';
 export default function GhostHud() {
   const [isOpen, setIsOpen] = useState(true);
@@ -19,7 +19,7 @@ export default function GhostHud() {
   const [savedCount, setSavedCount] = useState(0);
   const [isSaved, setIsSaved] = useState(false);
 
-  // Library State
+  
   const [libraryItems, setLibraryItems] = useState([]);
 
   useEffect(() => {
@@ -36,21 +36,21 @@ export default function GhostHud() {
     setIsScanning(true);
     setSimilarNotes([]); // Clear previous results
 
-    // 1. Scrape Text
+   
     setTimeout(async () => {
       const result = extractPageContent();
       setScanData(result);
       setIsScanning(false);
 
-      // 2. Trigger AI (if text is found)
+      
       if (result && result.text && isReady) {
         setProcessingAI(true);
         try {
           console.log("Generating Embedding...");
           const vector = await generateEmbedding(result.text);
-          setEmbedding(vector); // Save vector to state
+          setEmbedding(vector); 
 
-          // 3. Find Similar Notes
+  
           const matches = await findSimilarSnippets(vector);
           setSimilarNotes(matches);
 
@@ -98,7 +98,7 @@ export default function GhostHud() {
         </div>
       </div>
 
-      {/* Scanner View */}
+      
       {view === 'scanner' && (
         <>
           {!scanData ? (
@@ -146,7 +146,7 @@ export default function GhostHud() {
         </>
       )}
 
-      {/* Library View */}
+      
       {view === 'library' && (
         <div className="ghost-library-view">
 
