@@ -60,7 +60,7 @@ Unlike standard content scripts that break when a website uses Tailwind or Boots
 ### Installation
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/Bructi/ghost-writer.git](https://github.com/Bructi/ghost-writer.git)
+    git clone https://github.com/Bructi/ghost-writer.git
     cd ghost-writer
     ```
 
